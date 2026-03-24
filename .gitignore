@@ -1,1 +1,8 @@
 __pycache__
+
+# Camera run data — regenerable from run_config.json
+notebooks/cameras/**/images/
+notebooks/cameras/**/*.csv
+notebooks/cameras/**/*.npy
+notebooks/cameras/**/SAM/
+notebooks/cameras/**/elevation_maps/

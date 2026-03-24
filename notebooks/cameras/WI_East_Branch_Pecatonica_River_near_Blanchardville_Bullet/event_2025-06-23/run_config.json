@@ -1,0 +1,12 @@
+{
+  "camera_id": "WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet",
+  "site": "05433000",
+  "run_name": "event_2025-06-23",
+  "start_all": "2025-03-21",
+  "end_all": "2025-10-17",
+  "start_event": "2025-06-23 18:00",
+  "end_event": "2025-06-26 10:00",
+  "use_event_times": true,
+  "max_results": 100,
+  "allowable_im_data_time_diff": 60
+}

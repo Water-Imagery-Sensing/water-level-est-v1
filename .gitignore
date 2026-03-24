@@ -1,4 +1,5 @@
 __pycache__
+.DS_Store
 
 # SAM 2 model checkpoints — download separately (see README)
 checkpoints/*.pt

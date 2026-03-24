@@ -8,4 +8,5 @@ pynims/workflows.py
 pynims.egg-info/PKG-INFO
 pynims.egg-info/SOURCES.txt
 pynims.egg-info/dependency_links.txt
+pynims.egg-info/requires.txt
 pynims.egg-info/top_level.txt

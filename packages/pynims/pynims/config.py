@@ -2,6 +2,7 @@
 NIMS_PROD_CAMERA_BASE_URL = (
     "https://api.waterdata.usgs.gov/nims/v0/"
 )
+NIMS_DEV_CAMERA_BASE_URL = "https://wnzcqxlz38.execute-api.us-east-1.amazonaws.com/dev/"
 NIMS_IMAGE_BASE_URL = "https://usgs-nims-images.s3.amazonaws.com/"
 
 # IMAGE LIST REQUEST CONSTANTS

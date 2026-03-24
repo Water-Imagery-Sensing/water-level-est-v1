@@ -1,5 +1,8 @@
 __pycache__
 
+# SAM 2 model checkpoints — download separately (see README)
+checkpoints/*.pt
+
 # Camera run data — regenerable from run_config.json
 notebooks/cameras/**/images/
 notebooks/cameras/**/*.csv

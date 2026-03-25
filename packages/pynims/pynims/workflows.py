@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Optional, Union
+from typing import List, Optional, Union
 from datetime import datetime
 import json
 
@@ -46,12 +46,18 @@ def download_images_for_camera(
     recursive: Optional[bool] = None,
     max_results: Optional[int] = None,
     save_dir: Optional[Union[str, Path]] = None,
+    image_list: Optional[List[str]] = None,
 ) -> None:
-    """Get images for a camera and download them all."""
+    """Get images for a camera and download them all.
+
+    If image_list is provided, those images are downloaded directly
+    and the start/end/recursive/max_results parameters are ignored.
+    """
     with NIMSClient() as client:
-        image_list = client.get_image_list(
-            camera_id, start, end, recursive, max_results
-        )
+        if image_list is None:
+            image_list = client.get_image_list(
+                camera_id, start, end, recursive, max_results
+            )
         if len(image_list) > 0:
             for idx, image in enumerate(image_list):
                 print(f"image # {idx + 1} of {len(image_list)}")

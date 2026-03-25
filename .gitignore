@@ -1,7 +1,8 @@
 __pycache__
 .DS_Store
 
-# SAM 2 model checkpoints — download separately (see README)
+# SAM 2 — cloned and installed locally (see README)
+sam2/
 checkpoints/*.pt
 
 # Camera run data — regenerable from run_config.json
@@ -10,3 +11,4 @@ notebooks/cameras/**/*.csv
 notebooks/cameras/**/*.npy
 notebooks/cameras/**/SAM/
 notebooks/cameras/**/elevation_maps/
+notebooks/cameras/**/example_masks/

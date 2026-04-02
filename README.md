@@ -44,8 +44,9 @@ pip install -e sam2
 ```sh
 cd packages
 git clone https://github.com/DepthAnything/Depth-Anything-V2.git
-pip install -e Depth-Anything-V2
 ```
+
+The notebook adds the package to `sys.path` at runtime — no `pip install` needed.
 
 ### 5. Install project dependencies
 

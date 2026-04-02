@@ -1,0 +1,26 @@
+{
+  "camera_id": "CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton",
+  "site": "11176340",
+  "run_name": "event_2026-02-15",
+  "start_all": "2026-02-15",
+  "end_all": "2026-02-18",
+  "start_event": "2026-02-15 16:30",
+  "end_event": "2026-02-17 18:00",
+  "use_event_times": true,
+  "max_results": 100,
+  "allowable_im_data_time_diff": 60,
+  "sam_prompt_points": [
+    [
+      750.0,
+      800.0
+    ],
+    [
+      350.0,
+      500.0
+    ]
+  ],
+  "sam_prompt_labels": [
+    1,
+    0
+  ]
+}

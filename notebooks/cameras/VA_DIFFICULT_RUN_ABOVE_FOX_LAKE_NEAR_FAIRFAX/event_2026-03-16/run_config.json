@@ -1,0 +1,31 @@
+{
+  "camera_id": "VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX",
+  "site": "01645704",
+  "run_name": "event_2026-03-16",
+  "start_all": "2026-03-16",
+  "end_all": "2026-03-18",
+  "start_event": "2026-03-16 08:00",
+  "end_event": "2026-03-17 06:00",
+  "use_event_times": true,
+  "max_results": 100,
+  "allowable_im_data_time_diff": 60,
+  "sam_prompt_points": [
+    [
+      700.0,
+      1000.0
+    ],
+    [
+      1500.0,
+      1200.0
+    ],
+    [
+      1200.0,
+      800.0
+    ]
+  ],
+  "sam_prompt_labels": [
+    1,
+    1,
+    0
+  ]
+}

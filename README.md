@@ -39,7 +39,16 @@ git clone https://github.com/facebookresearch/sam2.git
 pip install -e sam2
 ```
 
-### 4. Install project dependencies
+### 4. Install Depth Anything V2
+
+```sh
+cd packages
+git clone https://github.com/DepthAnything/Depth-Anything-V2.git
+```
+
+The notebook adds the package to `sys.path` at runtime — no `pip install` needed.
+
+### 5. Install project dependencies
 
 ```sh
 pip install -r requirements.txt
@@ -60,3 +69,15 @@ checkpoints/
 ```
 
 If you switch to a different model variant, update the `sam2_checkpoint` and `model_cfg` variables in the notebook's configuration cell accordingly. Config files are resolved from the installed `sam2` package and don't need to be downloaded separately.
+
+## Depth Anything V2 Model Checkpoint
+
+Notebook `04_depth_to_elevation.ipynb` requires a Depth Anything V2 model checkpoint. Download the Small model checkpoint from [HuggingFace](https://huggingface.co/depth-anything/Depth-Anything-V2-Small) and place it in the `checkpoints/` directory:
+
+```
+checkpoints/
+├── sam2.1_hiera_tiny.pt
+└── depth_anything_v2_vits.pth
+```
+
+If you switch to a different model size (Base or Large), update the `encoder` variable in the notebook's configuration cell accordingly.

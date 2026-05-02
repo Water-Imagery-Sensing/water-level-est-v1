@@ -4,6 +4,7 @@ __pycache__
 # SAM 2 — cloned and installed locally (see README)
 sam2/
 checkpoints/*.pt
+checkpoints/*.pth
 
 # Camera run data — regenerable from run_config.json
 notebooks/cameras/**/images/
@@ -11,4 +12,5 @@ notebooks/cameras/**/*.csv
 notebooks/cameras/**/*.npy
 notebooks/cameras/**/SAM/
 notebooks/cameras/**/elevation_maps/
+notebooks/cameras/**/depth/
 notebooks/cameras/**/example_masks/

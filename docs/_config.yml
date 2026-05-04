@@ -1,2 +1,5 @@
 theme: minima
 title: Water Level Estimation
+header_pages:
+  - index.md
+  - motivation.md

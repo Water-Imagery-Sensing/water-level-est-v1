@@ -16,13 +16,24 @@ For this project, we aimed to develop a vision system that can accurately estima
 1. Capture new image
 2. Segment water mask
 3. Extract water level
-    - compare water mask with elevation map
+    - Compare water mask with elevation map
 
 ## Implementation
 
 ### Elevation Map
 
 ### Water Level Extraction
+<img width="700" height="551" alt="Basic Extraction Idea" src="assets/Basic_extraction_Idea.png">
+
+To extract the water level from an image, three inputs are needed: the image itself, an elevation map of the scene for each pixel, and a relative depth map for the image indicating the distances from the camera to each pixel. The elevation map and depth map can be extracted from the scene and then used for all future predicitons. With these three inputs, the algorithm identifies where the water meets the shore and extracts the elevations corresponding to that specific shoreline, since each water level corresponds to a unique shoreline location in the image.
+
+With these inputs the following steps occur:
+1. Mask Extraction - A mask of the water in the image is extracted. This can be done with a Neural network such as the segment anything model (SAM).
+2. Mask Cleaning - The mask is often full of unwanted holes and artifacts. To fix this a series of dialations and errosions that expand and contract the mask are used to filled the empty space.
+3. Edge Extraction - To extract the edges of the mask, first diatliton is applied to the mask. Is shirnks the mask by 1 pixel. Then the smaller mask is subtracted from the original to leave just the edge pixels as a mask.
+
+<img src="assets/extraction_steps1-3.png" alt="Extraction Steps" width="80%">
+
 
 ## Results
 

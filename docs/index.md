@@ -23,9 +23,10 @@ For this project, we aimed to develop a vision system that can accurately estima
 ### Elevation Map
 
 ### Water Level Extraction
-<img src="assets/basic_extraction_idea.png" alt="Basic Extraction Idea" width="80%">
-
-To extract the water level from an image, three inputs are needed: the image itself, an elevation map of the scene for each pixel, and a relative depth map for the image indicating the distances from the camera to each pixel. The elevation map and depth map can be extracted from the scene and then used for all future predicitons. With these three inputs, the algorithm identifies where the water meets the shore and extracts the elevations corresponding to that specific shoreline, since each water level corresponds to a unique shoreline location in the image.
+<p align="center">
+    <img src="assets/basic_extraction_idea.png" alt="Basic Extraction Idea" width="60%">
+</p>
+To extract the water level from an image, three inputs are needed: the image itself, an elevation map of the scene for each pixel, and a relative depth map for the image indicating the distances from the camera to each pixel. The elevation map and depth map can be extracted from the scene and then used for all future predicitons. With these three inputs, the algorithm identifies where the water meets the shore and extracts the elevations corresponding to that specific shoreline, since each water level corresponds to a unique shoreline location in the image. <br> <br>
 
 With these inputs the following steps occur:
 1. Mask Extraction - A mask of the water in the image is extracted. This can be done with a Neural network such as the segment anything model (SAM).
@@ -35,7 +36,7 @@ With these inputs the following steps occur:
 <img src="assets/extraction_steps1-3.png" alt="Extraction Steps 1 to 3" width="100%">
 4. Edge Trimming - Since short edges are likely to only be artifcats, the edges are labeled using 4-connectivity and edges that are too short are removed. The result is a clean edge mask that can be used for extracting pixel values.
 <img src="assets/extraction_steps4.png" alt="Extraction Step 4" width="100%">
-5. Compute Weighted Median - Use the edge mask to extract the corresponding elevation and depth values. Using these values, computed the weighted median for each river bank using the distance from the camera as a weight (closer = larger weight). To account for instances where very small changes in the pixel locations result in major elevation changes, a confidence score is also computed based on the gradient image of elevation map and places with a very large gradient are given a lower weight and confidence score. <br>
+5. Compute Weighted Median - Use the edge mask to extract the corresponding elevation and depth values. Using these values, computed the weighted median for each river bank using the distance from the camera as a weight (closer = larger weight). To account for instances where very small changes in the pixel locations result in major elevation changes, a confidence score is also computed based on the gradient of elevation map and pixels with a very large gradient are given a lower confidence score and weight. <br>
 6. Combine Banks - Finally, combine the estimates from each bank using the variance in banks water level predictions. The result is the predicted water level.
 <img src="assets/extraction_steps5-6.png" alt="Extraction Steps 5 to 6" width="100%">
 

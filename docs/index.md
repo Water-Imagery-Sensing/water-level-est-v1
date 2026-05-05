@@ -18,6 +18,17 @@ For this project, we aimed to develop a vision system that can accurately estima
 3. Extract water level
     - Compare water mask with elevation map
 
+### Data Selection 
+Site Selection: 
+A key component of this project was the data. We identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
+1. Visibility of the Shoreline - We chose sites that had a very distinct shoreline in the images. Some sites have the camera directed at large bodies of water so the shoreline is very far away and small. Others have lots of growth in the images that make the water edge hard to see. Since our method relies upon clearly identifying the water level on the shore, choosing sites that met this criteria was vital. 
+2. Obvious Visual Changes with Water Level - Another important factor was choosing sites with clear changes in the images with changes in water level. For sites with larger bodies of water or cameras far away, a change in the water level is not always visible. To avoid this, we chose sites where the bank of the river changes drastically with water level. 
+3. Water Level Variation - To allow for better estimates of the water level, we chose sites that had large changes in water level.
+4. Site Variation - While we aren’t focusing on radically different sites, we still wanted some variation in the size of the rivers, orientation of the cameras, and distance from the water in our sites to test the robustness of our method. Because of this we chose a variety of locations of different types.
+5. Data Availability - While many sites are listed on the HVIS website, not all of the sites had corresponding river level readings and time matched images. We specifically chose sites with a variety of images and their corresponding water levels.
+6. Weather - Since our method relies on the shoreline, it will completely fail when the river freezes. For this reason, we chose a variety of sites that are in a southern climate and didn’t show any signs of freezing in the images. For the sites that did have winter, we marked them in a table.
+7. Night Time Images - Some cameras in the HVIS database have IR night vision cameras while others don’t record night events at all. Some night modes perform very poorly, so we avoided sites with bad data and marked which sites had good or no night time data. 
+
 ## Implementation
 
 ### Elevation Map

@@ -54,6 +54,10 @@ With these inputs the following steps occur:
 ## Results
 We tested our algorithm on a total of 8 different sites, each with a variety of setups and characteristics. For all sites we used the masks fpr the images to generate our elevation map and then tested our extraction using these same masks. For three sites, we additionally tested on completely different images of the site not used to generate the depth map. Even when tested on unseen images, our method performed very well matching the general trends of the true data. 
 
+<table>
+    <tr>WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet </tr>
+    <tr>CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton</tr>
+</table>
 
 | Number | Site                                                   | Seen/Unseen/Both?| MEA (ft.) |
 |-|-------------------------------------------------------------- | ---- | -----|

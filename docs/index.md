@@ -37,7 +37,7 @@ With these inputs the following steps occur:
 <img src="assets/extraction_steps4.png" alt="Extraction Step 4" width="80%">
 5. Compute Weighted Median - Use the edge mask to extract the corresponding elevation and depth values. Using these values, computed the weighted median for each river bank using the distance from the camera as a weight (closer = larger weight).
 6. Combine Banks - Finally, combine the estimates from each bank using the variance in banks water level predictions. The result is the predicted water level.
-<img src="assets/extraction_step5-6.png" alt="Extraction Steps 5 to 6" width="80%">
+<img src="assets/extraction_steps5-6.png" alt="Extraction Steps 5 to 6" width="80%">
 
 ## Results
 

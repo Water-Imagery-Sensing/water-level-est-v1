@@ -43,6 +43,17 @@ With these inputs the following steps occur:
 ## Results
 We tested our algorithm on a total of 8 different sites, each with a variety of setups and characteristics. For all sites we used the masks fpr the images to generate our elevation map and then tested our extraction using these same masks. For three sites, we additionally tested on completely different images of the site not used to generate the depth map. Even when tested on unseen images, our method performed very well matching the general trends of the true data. 
 
+
+| Number | Site                                                   | Seen/Unseen/Both?| MEA (ft.) |
+|-|-------------------------------------------------------------- | ---- | -----|
+|1| WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet    | Both | 0.106/0.069 |
+|2| CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton           | Both | 0.276/0.398 |
+|3| OK_Illinois_River_near_Moodys                                 | Both | 0.190/0.26 |
+|4| OR_Breitenbush_River_above_French_Creek_near_Detroit          | Seen | 0.338 |
+|5| SC_Waccamaw_River_at_SC_22_below_Longs                        | Seen | 0.181 |
+|6| VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX                  | Seen | 0.132 |
+|7| WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV        | Seen | 0.073 |
+|8| WI_Silver_Creek_at_State_Highway_21_near_Angelo               | Seen | 0.243 |
 <p align="center">
     <b>1. WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet</b>: Example Image, Elevation Map, and Relative Depth Map <br>
     <img src="assets/WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet/Image.jpg" width="33%" />
@@ -112,7 +123,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>7. WI_Silver_Creek_at_State_Highway_21_near_Angelo</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
+    <b>8. WI_Silver_Creek_at_State_Highway_21_near_Angelo</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/Image.jpg" width="33%" />
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/elevation_map_with_background.png" width="33%" />   
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/Water Level Predicitons Using weighted median.png" width="33%" />    

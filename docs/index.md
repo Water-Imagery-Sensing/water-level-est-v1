@@ -32,12 +32,12 @@ With these inputs the following steps occur:
 2. Mask Cleaning - The mask is often full of unwanted holes and artifacts. To fix this a series of dialations and errosions that expand and contract the mask are used to filled the empty space.
 3. Edge Extraction - To extract the edges of the mask, first diatliton is applied to the mask. Is shirnks the mask by 1 pixel. Then the smaller mask is subtracted from the original to leave just the edge pixels as a mask.
 
-<img src="assets/extraction_steps1-3.png" alt="Extraction Steps 1 to 3" width="80%">
+<img src="assets/extraction_steps1-3.png" alt="Extraction Steps 1 to 3" width="100%">
 4. Edge Trimming - Since short edges are likely to only be artifcats, the edges are labeled using 4-connectivity and edges that are too short are removed. The result is a clean edge mask that can be used for extracting pixel values.
-<img src="assets/extraction_steps4.png" alt="Extraction Step 4" width="80%">
+<img src="assets/extraction_steps4.png" alt="Extraction Step 4" width="100%">
 5. Compute Weighted Median - Use the edge mask to extract the corresponding elevation and depth values. Using these values, computed the weighted median for each river bank using the distance from the camera as a weight (closer = larger weight).
 6. Combine Banks - Finally, combine the estimates from each bank using the variance in banks water level predictions. The result is the predicted water level.
-<img src="assets/extraction_steps5-6.png" alt="Extraction Steps 5 to 6" width="80%">
+<img src="assets/extraction_steps5-6.png" alt="Extraction Steps 5 to 6" width="100%">
 
 ## Results
 

@@ -1,5 +1,5 @@
 ---
-title: Water Level Estimation
+title: River and Stream Water Level Estimation from Images
 layout: single
 toc: true
 toc_sticky: true

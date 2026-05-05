@@ -11,6 +11,8 @@ For this project, we aimed to develop a vision system that can accurately estima
 
 ## Approach
 
+<img src="assets/approach_overview.png" alt="Approach Overview" width="80%">
+
 1. Capture new image
 2. Segment water mask
 3. Extract water level

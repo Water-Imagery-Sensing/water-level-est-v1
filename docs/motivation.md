@@ -1,5 +1,0 @@
----
-title: Motivation
----
-
-Testing

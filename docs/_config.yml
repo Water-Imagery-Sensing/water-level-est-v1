@@ -1,5 +1,6 @@
 remote_theme: mmistakes/minimal-mistakes
 title: Water Level Estimation
 markdown: GFM
+classes: wide
 plugins:
   - jekyll-include-cache

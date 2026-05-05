@@ -23,7 +23,7 @@ For this project, we aimed to develop a vision system that can accurately estima
 ### Elevation Map
 
 ### Water Level Extraction
-<img width="700" height="551" alt="Basic Extraction Idea" src="assets/Basic_extraction_Idea.png">
+<img src="assets/basic_extraction_idea.png" alt="Basic Extraction Idea" width="80%">
 
 To extract the water level from an image, three inputs are needed: the image itself, an elevation map of the scene for each pixel, and a relative depth map for the image indicating the distances from the camera to each pixel. The elevation map and depth map can be extracted from the scene and then used for all future predicitons. With these three inputs, the algorithm identifies where the water meets the shore and extracts the elevations corresponding to that specific shoreline, since each water level corresponds to a unique shoreline location in the image.
 
@@ -32,8 +32,12 @@ With these inputs the following steps occur:
 2. Mask Cleaning - The mask is often full of unwanted holes and artifacts. To fix this a series of dialations and errosions that expand and contract the mask are used to filled the empty space.
 3. Edge Extraction - To extract the edges of the mask, first diatliton is applied to the mask. Is shirnks the mask by 1 pixel. Then the smaller mask is subtracted from the original to leave just the edge pixels as a mask.
 
-<img src="assets/extraction_steps1-3.png" alt="Extraction Steps" width="80%">
-
+<img src="assets/extraction_steps1-3.png" alt="Extraction Steps 1 to 3" width="80%">
+4. Edge Trimming - Since short edges are likely to only be artifcats, the edges are labeled using 4-connectivity and edges that are too short are removed. The result is a clean edge mask that can be used for extracting pixel values.
+<img src="assets/extraction_steps4.png" alt="Extraction Step 4" width="80%">
+5. Compute Weighted Median - Use the edge mask to extract the corresponding elevation and depth values. Using these values, computed the weighted median for each river bank using the distance from the camera as a weight (closer = larger weight).
+6. Combine Banks - Finally, combine the estimates from each bank using the variance in banks water level predictions. The result is the predicted water level.
+<img src="assets/extraction_step5-6.png" alt="Extraction Steps 5 to 6" width="80%">
 
 ## Results
 

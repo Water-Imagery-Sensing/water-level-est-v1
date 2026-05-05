@@ -60,15 +60,16 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </table>
 
 | Number | Site                                                   | Seen/Unseen/Both?| MEA (ft.) |
-|-|-------------------------------------------------------------- | ---- | -----|
+|-|-------------------------------------------------------------- | ---- | -----       |
+
 |1| WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet    | Both | 0.106/0.069 |
 |2| CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton           | Both | 0.276/0.398 |
-|3| OK_Illinois_River_near_Moodys                                 | Both | 0.190/0.26 |
-|4| OR_Breitenbush_River_above_French_Creek_near_Detroit          | Seen | 0.338 |
-|5| SC_Waccamaw_River_at_SC_22_below_Longs                        | Seen | 0.181 |
-|6| VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX                  | Seen | 0.132 |
-|7| WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV        | Seen | 0.073 |
-|8| WI_Silver_Creek_at_State_Highway_21_near_Angelo               | Seen | 0.243 |
+|3| OK_Illinois_River_near_Moodys                                 | Both | 0.190/0.26  |
+|4| OR_Breitenbush_River_above_French_Creek_near_Detroit          | Seen | 0.338       |
+|5| SC_Waccamaw_River_at_SC_22_below_Longs                        | Seen | 0.181       |
+|6| VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX                  | Seen | 0.132       | 
+|7| WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV        | Seen | 0.073       |
+|8| WI_Silver_Creek_at_State_Highway_21_near_Angelo               | Seen | 0.243       |
 <p align="center">
     <b>1. WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet</b>: Example Image, Elevation Map, and Relative Depth Map <br>
     <img src="assets/WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet/Image.jpg" width="33%" />

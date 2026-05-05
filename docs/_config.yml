@@ -1,6 +1,5 @@
 remote_theme: mmistakes/minimal-mistakes
 title: Water Level Estimation
-markdown: GFM
-author_profile: false
+markdown: kramdown
 plugins:
   - jekyll-include-cache

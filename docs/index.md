@@ -61,7 +61,6 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 
 | Number | Site                                                   | Seen/Unseen/Both?| MEA (ft.) |
 |-|-------------------------------------------------------------- | ---- | -----       |
-
 |1| WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet    | Both | 0.106/0.069 |
 |2| CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton           | Both | 0.276/0.398 |
 |3| OK_Illinois_River_near_Moodys                                 | Both | 0.190/0.26  |

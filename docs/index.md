@@ -2,6 +2,7 @@
 title: River and Stream Water Level Estimation from Images
 excerpt: "CS 766 Final Project \nForrest Peterson & Keegan Johnson"
 layout: single
+author_profile: false
 header:
   overlay_image: /assets/splash_page.jpg
   overlay_filter: 0.5

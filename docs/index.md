@@ -1,3 +1,12 @@
-## CS766 Final Project Webpage
+---
+title: Water Level Estimation
+layout: single
+toc: true
+toc_sticky: true
+---
 
-By: Forrest Peterson and Keegan Johnson
+## Motivation
+
+## Methods
+
+## Results

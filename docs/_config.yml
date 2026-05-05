@@ -1,5 +1,2 @@
-theme: minima
+remote_theme: mmistakes/minimal-mistakes
 title: Water Level Estimation
-header_pages:
-  - index.md
-  - motivation.md

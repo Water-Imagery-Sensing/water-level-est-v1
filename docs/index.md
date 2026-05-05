@@ -1,6 +1,9 @@
 ---
 title: River and Stream Water Level Estimation from Images
 layout: single
+header:
+  overlay_image: /assets//basic_extraction_idea.png
+classes: wide
 toc: true
 toc_sticky: true
 ---

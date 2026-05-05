@@ -18,8 +18,7 @@ For this project, we aimed to develop a vision system that can accurately estima
 3. Extract water level
     - Compare water mask with elevation map
 
-### Data Selection 
-Site Selection: 
+### Site Selection 
 A key component of this project was the data. We identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
 1. Visibility of the Shoreline - We chose sites that had a very distinct shoreline in the images. Some sites have the camera directed at large bodies of water so the shoreline is very far away and small. Others have lots of growth in the images that make the water edge hard to see. Since our method relies upon clearly identifying the water level on the shore, choosing sites that met this criteria was vital. 
 2. Obvious Visual Changes with Water Level - Another important factor was choosing sites with clear changes in the images with changes in water level. For sites with larger bodies of water or cameras far away, a change in the water level is not always visible. To avoid this, we chose sites where the bank of the river changes drastically with water level. 

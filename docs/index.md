@@ -1,8 +1,9 @@
 ---
 title: River and Stream Water Level Estimation from Images
+excerpt: "CS 766 Final Project"
 layout: single
 header:
-  overlay_image: /assets//splash_page.jpg
+  overlay_image: /assets/splash_page.jpg
   overlay_filter: 0.5
 toc: true
 toc_sticky: true

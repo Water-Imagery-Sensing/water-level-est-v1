@@ -18,7 +18,7 @@ toc_sticky: true
 
 ## Motivation
 
-For this project, we aimed to develop a vision system that can accurately estimate water level data from camera images of rivers, streams, and lakes. The United States Geological Survey (USGS) monitors the water level of different bodies of water at numerous locations across the United States using different gauges and cameras. Rather than relying on costly gauges to record the time varying water level of a site, we seek to create a system that can accept images of these sites and predict their corresponding water level. While this is often accomplished with water level markers or gauges being present in the image, we hope to leverage information in images and in the entire scene to determine water level variations. 
+For this project, we aimed to develop a vision system that can accurately estimate water level data from camera images of rivers, and streams. The United States Geological Survey (USGS) monitors the water level of different bodies of water at numerous locations across the United States using different gauges and cameras. Rather than relying on costly gauges to record the time varying water level of a site, we seek to create a system that can accept images of these sites and predict their corresponding water level. While this is often accomplished with water level markers or gauges being present in the image, we hope to leverage information in images and in the entire scene to determine water level variations. 
 
 ## Approach
 
@@ -108,18 +108,18 @@ To extract the water level from an image, three inputs are needed: the image its
 With these inputs the following steps occur:
 1. Mask Extraction - A mask of the water in the image is extracted. This can be done with a Neural network such as the segment anything model (SAM).
 2. Mask Cleaning - The mask is often full of unwanted holes and artifacts. To fix this a series of dialations and errosions that expand and contract the mask are used to filled the empty space.
-3. Edge Extraction - To extract the edges of the mask, first diatliton is applied to the mask. Is shirnks the mask by 1 pixel. Then the smaller mask is subtracted from the original to leave just the edge pixels as a mask.
+3. Edge Extraction - To extract the edges of the mask, first dialation is applied to the mask. This shrinks the mask by 1 pixel. Then the smaller mask is subtracted from the original to leave just the edge pixels as a mask.
 
 <img src="assets/extraction_steps1-3.png" alt="Extraction Steps 1 to 3" width="100%">
 
 4. Edge Trimming - Since short edges are likely to only be artifcats, the edges are labeled using 4-connectivity and edges that are too short are removed. The result is a clean edge mask that can be used for extracting pixel values.
 <img src="assets/extraction_steps4.png" alt="Extraction Step 4" width="100%">
-5. Compute Weighted Median - Use the edge mask to extract the corresponding elevation and depth values. Using these values, computed the weighted median for each river bank using the distance from the camera as a weight (closer = larger weight). To account for instances where very small changes in the pixel locations result in major elevation changes, a confidence score is also computed based on the gradient of elevation map and pixels with a very large gradient are given a lower confidence score and weight.
-6. Combine Banks - Finally, combine the estimates from each bank using the variance in banks water level predictions. The result is the predicted water level.
+6. Compute Weighted Median - First the edge mask is used to extract the corresponding elevation and depth values. Using these values, the weighted median is computed for each river bank using the distance from the camera as a weight (closer = larger weight). To account for instances where very small changes in the pixel locations result in major elevation changes, a confidence score is also computed based on the gradient of the elevation map and pixels with a very large gradient are given a lower confidence score and weight.
+7. Combine Banks - Finally, the estimates from each bank are combined using the variance in banks water level predictions. The result is the predicted water level.
 <img src="assets/extraction_steps5-6.png" alt="Extraction Steps 5 to 6" width="100%">
 
 ## Results
-We tested our algorithm on a total of 8 different sites, each with a variety of setups and characteristics. For all sites we used the masks fpr the images to generate our elevation map and then tested our extraction using these same masks. For three sites, we additionally tested on completely different images of the site not used to generate the depth map. Even when tested on unseen images, our method performed very well matching the general trends of the true data. 
+We tested our algorithm on a total of 8 different sites, each with a variety of setups and characteristics. For all sites we used the masks for the images to generate our elevation map, and then tested our extraction using these same masks. For three sites, we additionally tested on completely different images of the site not used to generate the depth map. Even when tested on unseen images, our method performed very well matching the general trends of the true data. 
 
 | Number | Site                                                   | Seen/Unseen/Both?| MEA (ft.) |
 |-|-------------------------------------------------------------- | ---- | -----       |
@@ -207,7 +207,6 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/Water Level Predicitons Using weighted median.png" width="30%" />    
     <br> MAE: 0.243 ft, Range: 6.03-8.54ft. <br>
 </p>
-<br>
 
 ## Discussion
 
@@ -232,7 +231,7 @@ Our method relies heavily upon the quality of the water masks fed into it. We us
   </div>
   <div>
     <img src="assets/dark_and_raining.png" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
-    <p style="font-size:0.8em; margin:0.3rem 0 0;">Example Darkness and Rain Ruining the Mask</p>
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Example of Darkness and Rain Ruining the Mask</p>
   </div>
   <div>
     <img src="assets/plants.png" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
@@ -246,7 +245,7 @@ These issues in the masks ultiamtely resulted in errors in our elevation maps an
 When generating calibrated elevation maps, we used the water level information as well as a depth estiamate from a neural network. While fitting the data this way worked for some scenes where the river was viewed from the side, for scenes where the river was viewed from above, the depth information was wrong and the fit failed. To fix this, we only used the fit to extrapolate to unseen points in the scene and used the raw mask values where they were recorded. 
 
 #### Cross River Masks
-While ideally our method seperates the different banks of the river, often the mask of the water would not terminate at the edges of the image. As a result, the edges would be fully connected, including points that were in the middle of the river. We attempted to mitigate this by weighting these pixels by depth; however, this did not full fix the issue. As a result, many estiamtes were skewed lower since the middle river pixels correspond to low water levels. 
+While ideally our method seperates the different banks of the river, often the mask of the water would not terminate at the edges of the image. As a result, the edges would be fully connected, including points that were in the middle of the river. We attempted to mitigate this by weighting these pixels by depth; however, this did not fully fix the issue. As a result, many estiamtes were skewed lower since the middle river pixels correspond to low water levels. 
 
 ### The Future
 In the future this method could be improved by:

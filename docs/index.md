@@ -20,13 +20,18 @@ toc_sticky: true
 For this project, we aimed to develop a vision system that can accurately estimate water level data from camera images of rivers, streams, and lakes. The United States Geological Survey (USGS) monitors the water level of different bodies of water at numerous locations across the United States using different gauges and cameras. Rather than relying on costly gauges to record the time varying water level of a site, we seek to create a system that can accept images of these sites and predict their corresponding water level. While this is often accomplished with water level markers or gauges being present in the image, we hope to leverage information in images and in the entire scene to determine water level variations. 
 
 ## Approach
+<p align="center">
+    <img src="assets/approach_overview.png" alt="Approach Overview" width="70%">
+</p>
 
-<img src="assets/approach_overview.png" alt="Approach Overview" width="80%">
+The following is a high level overview of the vision approach we used to estimate water level in images: 
 
-1. Capture new image
-2. Segment water mask
-3. Extract water level
-    - Compare water mask with elevation map
+Our approach begins with capturing a new image of a waterbody. From there, that image is segmented to produce a mask of only the water pixels. Then, this water mask is one of two inputs that get fed into a water level extraction process. The other input is an elevation map, which essentially says what the real-world elevation is for each pixel in the image scene. Together, these inputs are used to output a water level prediction for the captured image.
+
+1. Capture New Image - A new unseen image of a water body is collected for processing.
+2. Segment Water Mask - The collected image is segmented using a deep learning segmentation model (like Segment Anything Model) to produce a mask of the pixels representing water in the image. This is one of two inputs into the water level extraction process, which will be descirbed in full in the Implementation section.
+3. Provide Elevation Map - An elevation map, which provides the known real-world elevation at each pixel in the image, must also be supplied as an input.
+4. Extract Water Level - The position of the water mask  is compared to the elevation map to produce a new water level estimate.
 
 ### Site Selection 
 A key component of this project was the data. We identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
@@ -41,6 +46,19 @@ A key component of this project was the data. We identified 8 sites from across 
 ## Implementation
 
 ### Elevation Map
+<p align="center">
+    <img src="assets/elevation_map_steps.png" alt="Elevation Map Steps" width="60%">
+</p>
+
+Ideally, the elevation map generation step would be accomplished with a physical survey of the scene, like a lidar scan, calibrated to the camera's view of the scene. However, since we did not have the means to physically access our test sites, we instead relied on historical images and data to provide us with an estimate of scene elevations in the image. The following steps were taken to generate an elevation map for each individual test camera:
+
+1. Data Collection - First, we gathered historical images covering a wide range of water levels.
+2. Water Segmentation - Then, we used the Segment Anything Model Version 2 in order to produce water masks for each image.
+3. Per-Pixel Elevation Ground Truth - Next, the water masks were overlaid on top of each other and combined with the water level data, and an elevation map was computed by taking the lowest observed elevation at each pixel.
+4. Depth Estimation - After that, a depth map of the scene was created using the Depth Anything Version 2 depth estimation model.
+5. Calibrated Elevation Map - And then finally, a polynomial regression was fit to map relative depth and pixel y coordinate to gage height, generating a calibrated elevation map. 
+
+This output elevation map is now ready to be used as an input to the water level extraction process.
 
 ### Water Level Extraction
 <p align="center">

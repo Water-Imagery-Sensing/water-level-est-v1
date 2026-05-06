@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/splash_page.jpg
   overlay_filter: 0.5
 toc: true
-toc_sticky: true
+# toc_sticky: true
 ---
 
 ## Motivation
@@ -28,12 +28,12 @@ The following is a high level overview of the vision approach we used to estimat
 </p>
 
 1. Capture New Image - A new unseen image of a water body is collected for processing.
-2. Segment Water Mask - The collected image is segmented using a deep learning segmentation model (like Segment Anything Model) to produce a mask of the pixels representing water in the image. This is one of two inputs into the water level extraction process, which will be descirbed in full in the Implementation section.
+2. Segment Water Mask - The collected image is segmented using a deep learning segmentation model (like Segment Anything Model) to produce a mask of the pixels representing water in the image. This is one of two inputs into the water level extraction process, which will be descirbed in full in the [Implementation](#implementation) section.
 3. Provide Elevation Map - An elevation map, which provides the known real-world elevation at each pixel in the image, must also be supplied as an input.
 4. Extract Water Level - The position of the water mask is compared to the elevation map to produce a new water level estimate.
 
 ### Site Selection 
-A key component of this project was the data. We identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
+A key component of this project was the data. We searched the USGS Hydrologic Imagery Visualization and Information System (HIVIS) [wepage](https://apps.usgs.gov/hivis) and identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
 1. Visibility of the Shoreline - We chose sites that had a very distinct shoreline in the images. Some sites have the camera directed at large bodies of water so the shoreline is very far away and small. Others have lots of growth in the images that make the water edge hard to see. Since our method relies upon clearly identifying the water level on the shore, choosing sites that met this criteria was vital. 
 2. Obvious Visual Changes with Water Level - Another important factor was choosing sites with clear changes in the images with changes in water level. For sites with larger bodies of water or cameras far away, a change in the water level is not always visible. To avoid this, we chose sites where the bank of the river changes drastically with water level. 
 3. Water Level Variation - To allow for better estimates of the water level, we chose sites that had large changes in water level.
@@ -42,11 +42,23 @@ A key component of this project was the data. We identified 8 sites from across 
 6. Weather - Since our method relies on the shoreline, it will completely fail when the river freezes. For this reason, we chose a variety of sites that are in a southern climate and didn’t show any signs of freezing in the images. For the sites that did have winter, we marked them in a table.
 7. Night Time Images - Some cameras in the HVIS database have IR night vision cameras while others don’t record night events at all. Some night modes perform very poorly, so we avoided sites with bad data and marked which sites had good or no night time data. 
 
+Below is an example image from each of our selected test sites:
+
+East Branch Pecatonica River NR Blanchardville, WI - USGS-05433000
+Arroyo DE LA Laguna a Corte Madrid NR Pleasanton - USGS-11176340
+Illinois River near Moodys, OK - USGS-07196320
+Breitenbush R Abv French CR NR Detroit, Or. - USGS-14179000
+Waccamaw River at SC-22 Below Longs, SC - USGS-02110525
+Difficult Run Above Fox Lake Near Fairfax, VA - USGS-01645704
+Black Earth Creek nr Brewery Rd at Cross Plains PIV, WI - USGS-05406457
+Silver Creek at State Highway 21 Near Angelo, WI - USGS-05382284
+
+
 ## Implementation
 
 ### Elevation Map
 
-Ideally, the elevation map generation step would be accomplished with a physical survey of the scene, like a lidar scan, calibrated to the camera's view of the scene. However, since we did not have the means to physically access our test sites, we instead relied on historical images and data to provide us with an estimate of scene elevations in the image. The following steps were taken to generate an elevation map for each individual test camera:
+Ideally, the elevation map generation step discussed in the [Approach](#approach) would be accomplished with a physical survey of the scene, like a lidar scan, calibrated to the camera's view of the scene. However, since we did not have the means to physically access our test sites, we instead relied on historical images and data to provide us with an estimate of scene elevations in the image. The following steps were taken to generate an elevation map for each individual test camera:
 
 <p align="center">
     <img src="assets/elevation_map_steps.png" alt="Elevation Map Steps" width="90%">

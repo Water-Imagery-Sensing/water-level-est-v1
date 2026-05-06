@@ -12,7 +12,7 @@ header:
   overlay_image: /assets/splash_page.jpg
   overlay_filter: 0.5
 toc: true
-# toc_sticky: true
+toc_sticky: true
 ---
 
 ## Motivation

@@ -44,14 +44,40 @@ A key component of this project was the data. We searched the USGS Hydrologic Im
 
 Below is an example image from each of our selected test sites:
 
-East Branch Pecatonica River NR Blanchardville, WI - USGS-05433000
-Arroyo DE LA Laguna a Corte Madrid NR Pleasanton - USGS-11176340
-Illinois River near Moodys, OK - USGS-07196320
-Breitenbush R Abv French CR NR Detroit, Or. - USGS-14179000
-Waccamaw River at SC-22 Below Longs, SC - USGS-02110525
-Difficult Run Above Fox Lake Near Fairfax, VA - USGS-01645704
-Black Earth Creek nr Brewery Rd at Cross Plains PIV, WI - USGS-05406457
-Silver Creek at State Highway 21 Near Angelo, WI - USGS-05382284
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; text-align: center; margin: 1rem 0;">
+  <div>
+    <img src="assets/WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">East Branch Pecatonica River NR Blanchardville, WI<br><small>USGS-05433000</small></p>
+  </div>
+  <div>
+    <img src="assets/CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Arroyo DE LA Laguna a Corte Madrid NR Pleasanton<br><small>USGS-11176340</small></p>
+  </div>
+  <div>
+    <img src="assets/OK_Illinois_River_near_Moodys/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Illinois River near Moodys, OK<br><small>USGS-07196320</small></p>
+  </div>
+  <div>
+    <img src="assets/OR_Breitenbush_River_above_French_Creek_near_Detroit/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Breitenbush River above French Creek NR Detroit, OR<br><small>USGS-14179000</small></p>
+  </div>
+  <div>
+    <img src="assets/SC_Waccamaw_River_at_SC_22_below_Longs/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Waccamaw River at SC-22 Below Longs, SC<br><small>USGS-02110525</small></p>
+  </div>
+  <div>
+    <img src="assets/VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Difficult Run Above Fox Lake Near Fairfax, VA<br><small>USGS-01645704</small></p>
+  </div>
+  <div>
+    <img src="assets/WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Black Earth Creek nr Brewery Rd at Cross Plains, WI<br><small>USGS-05406457</small></p>
+  </div>
+  <div>
+    <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/Image.jpg" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Silver Creek at State Highway 21 Near Angelo, WI<br><small>USGS-05382284</small></p>
+  </div>
+</div>
 
 
 ## Implementation

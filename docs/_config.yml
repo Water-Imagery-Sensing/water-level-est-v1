@@ -1,5 +1,6 @@
 remote_theme: mmistakes/minimal-mistakes
 title: Water Level Estimation
 markdown: kramdown
+logo: "assets/uw-crest-color-web-digital.png"
 plugins:
   - jekyll-include-cache

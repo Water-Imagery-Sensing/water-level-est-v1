@@ -3,6 +3,7 @@ Main:
   - title: "Code"
     url: https://github.com/Water-Imagery-Sensing/water-level-est-v1/
 
+logo: "/assets/images/uw-crest-color-web-digital.png"
 title: River and Stream Water Level Estimation from Images
 excerpt: "CS 766 Final Project <br>Forrest Peterson & Keegan Johnson"
 layout: single

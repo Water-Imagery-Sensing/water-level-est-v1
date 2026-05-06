@@ -50,7 +50,7 @@ A key component of this project was the data. We identified 8 sites from across 
 Ideally, the elevation map generation step would be accomplished with a physical survey of the scene, like a lidar scan, calibrated to the camera's view of the scene. However, since we did not have the means to physically access our test sites, we instead relied on historical images and data to provide us with an estimate of scene elevations in the image. The following steps were taken to generate an elevation map for each individual test camera:
 
 <p align="center">
-    <img src="assets/elevation_map_steps.png" alt="Elevation Map Steps" width="60%">
+    <img src="assets/elevation_map_steps.png" alt="Elevation Map Steps" width="90%">
 </p>
 
 1. Data Collection - First, we gathered historical images covering a wide range of water levels.

@@ -1,0 +1,27 @@
+{
+  "camera_id": "WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV",
+  "site": "05406457",
+  "run_name": "event_04-14-2026",
+  "start_all": "2026-04-14",
+  "end_all": "2026-04-19",
+  "start_event": "2026-04-14 06:30",
+  "end_event": "2026-04-19 19:45",
+  "use_event_times": true,
+  "max_results": 2000,
+  "keep_every_nth_image": 1,
+  "allowable_im_data_time_diff": 60,
+  "sam_prompt_points": [
+    [
+      900.0,
+      600.0
+    ],
+    [
+      100.0,
+      400.0
+    ]
+  ],
+  "sam_prompt_labels": [
+    1,
+    0
+  ]
+}

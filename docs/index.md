@@ -20,18 +20,17 @@ toc_sticky: true
 For this project, we aimed to develop a vision system that can accurately estimate water level data from camera images of rivers, streams, and lakes. The United States Geological Survey (USGS) monitors the water level of different bodies of water at numerous locations across the United States using different gauges and cameras. Rather than relying on costly gauges to record the time varying water level of a site, we seek to create a system that can accept images of these sites and predict their corresponding water level. While this is often accomplished with water level markers or gauges being present in the image, we hope to leverage information in images and in the entire scene to determine water level variations. 
 
 ## Approach
+
+The following is a high level overview of the vision approach we used to estimate water level in images: 
+
 <p align="center">
     <img src="assets/approach_overview.png" alt="Approach Overview" width="70%">
 </p>
 
-The following is a high level overview of the vision approach we used to estimate water level in images: 
-
-Our approach begins with capturing a new image of a waterbody. From there, that image is segmented to produce a mask of only the water pixels. Then, this water mask is one of two inputs that get fed into a water level extraction process. The other input is an elevation map, which essentially says what the real-world elevation is for each pixel in the image scene. Together, these inputs are used to output a water level prediction for the captured image.
-
 1. Capture New Image - A new unseen image of a water body is collected for processing.
 2. Segment Water Mask - The collected image is segmented using a deep learning segmentation model (like Segment Anything Model) to produce a mask of the pixels representing water in the image. This is one of two inputs into the water level extraction process, which will be descirbed in full in the Implementation section.
 3. Provide Elevation Map - An elevation map, which provides the known real-world elevation at each pixel in the image, must also be supplied as an input.
-4. Extract Water Level - The position of the water mask  is compared to the elevation map to produce a new water level estimate.
+4. Extract Water Level - The position of the water mask is compared to the elevation map to produce a new water level estimate.
 
 ### Site Selection 
 A key component of this project was the data. We identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 

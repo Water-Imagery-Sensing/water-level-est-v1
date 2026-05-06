@@ -33,7 +33,7 @@ The following is a high level overview of the vision approach we used to estimat
 4. Extract Water Level - The position of the water mask is compared to the elevation map to produce a new water level estimate.
 
 ### Site Selection 
-A key component of this project was the data. We searched the USGS Hydrologic Imagery Visualization and Information System (HIVIS) [wepage](https://apps.usgs.gov/hivis) and identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
+A key component of this project was the data. We searched the USGS Hydrologic Imagery Visualization and Information System (HIVIS) [webpage](https://apps.usgs.gov/hivis) and identified 8 sites from across the country as good candidates for our project. When choosing these sites we considered several different factors: 
 1. Visibility of the Shoreline - We chose sites that had a very distinct shoreline in the images. Some sites have the camera directed at large bodies of water so the shoreline is very far away and small. Others have lots of growth in the images that make the water edge hard to see. Since our method relies upon clearly identifying the water level on the shore, choosing sites that met this criteria was vital. 
 2. Obvious Visual Changes with Water Level - Another important factor was choosing sites with clear changes in the images with changes in water level. For sites with larger bodies of water or cameras far away, a change in the water level is not always visible. To avoid this, we chose sites where the bank of the river changes drastically with water level. 
 3. Water Level Variation - To allow for better estimates of the water level, we chose sites that had large changes in water level.
@@ -208,12 +208,12 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 
-## Discussion
+# Discussion
 
-### Strengths
+## Strengths
 Even though our method is not perfect, it apperears to work fairly well producing estimates that properly follow the water level trends. It seems promising that our method could have some real value in the field.
 
-### Challenges - Real World Data is Difficult
+## Challenges - Real World Data is Difficult
 Throughout this project we have encountered many challenges, mostly stemming from the fact that real world data is messy and difficult to work with.
 
 #### Mask Issues 
@@ -237,3 +237,6 @@ In the future this method could be improved by:
 - 3D Elevation Map Generation - Rather than using historic data, 3D elevation maps of the site could be captured with LIDAR and matched to the camera images. 
 - Full Prediction based on Neural Network - With the proper setup, a model could be trained to predict the water level directly from the images and elevation maps.
 - Implement in the field - This method could be applied to future sites and remove the need for water level gauges.
+
+# Code Repo
+The code for this project can be found on our [GitHub](https://github.com/Water-Imagery-Sensing/water-level-est-v1).

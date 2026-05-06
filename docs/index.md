@@ -211,28 +211,29 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 ## Discussion
 
 ### Strengths
-Even though our method is not perfect. It apperears to work fairly well producing estimates that properly follow the water level trends. It seems promising that our method could have some real value in the field.
+Even though our method is not perfect, it apperears to work fairly well producing estimates that properly follow the water level trends. It seems promising that our method could have some real value in the field.
 
 ### Challenges - Real World Data is Difficult
-Throughout this project we have encountered many challenges mostly stemming from the fact that real world data is messy and difficult to work with.
+Throughout this project we have encountered many challenges, mostly stemming from the fact that real world data is messy and difficult to work with.
 
 #### Mask Issues 
-Our method rely very heavily upon the quality of water masks fed into it. We used neural networks to aquire these which work farily well especially compared to more rudamentary approaches; however, despite our best efforts, these were often corrupted by factors such as:
-1. Lighting - Since the pictures are taking throughout the day, the lighting changes drastically adn harsh shadows made the masks fail.
-2. Reflections - When the water surfaces are very still, they produce reflections that are hard to distinguish. As a result, the water boundary was sometimes difficult to estimate. 
-3. Darkness - Despite being equiped with IR cameras, the cameras often had worse quality night images. The drastic change in the scene also made the model fail to mask the water surface. 
+Our method relies heavily upon the quality of the water masks fed into it. We used neural networks to aquire our masks which worked farily well, especially compared to more rudamentary approaches; however, despite our best efforts, these were often corrupted by factors such as:
+1. Lighting - Since the pictures are taken throughout the day, the lighting changes drastically and harsh shadows made the mask predictions fail.
+2. Reflections - When the water surfaces are very still, they produce clear reflections that are difficult to differentiate from the true objects. As a result, the water boundary was sometimes difficult to estimate. 
+3. Darkness - Despite being equiped with IR cameras, the cameras often had worse quality night images. The drastic change in the scene from day to night also made the model fail to mask the water surface. 
 4. Poor Weather - Rain streaks on the camera lens and blur caused by drops often made images completely unusable or created large gaps in the masks.
 5. Grass and Plants - Plants at the edges of the rivers, made it diffucult to see the shore line and made it difficult to properly mask the water.
 
-These issues in the masks ultiamtely resulted in errors in our elevation maps and in water level estimation. By using even better segmentation tools, we might be able to get better results. 
+These issues in the masks ultiamtely resulted in errors in our elevation maps and in the water level estimation. By using even better segmentation tools, we might be able to get better results. 
 
 #### Elevation Map Fitting 
-When generating calibrated elevation maps, we used the water level information as well as a depth estiamate from a neural network. While fitting the data this way worked for some scenes where the river was viewed from the side, for scenes where the depth information was wrong and the river was viewed from above, the fit failed. To fix this, we removed the fit for region where we had the water level data and only used the fit to extrapolate to unseen points in the scene. 
+When generating calibrated elevation maps, we used the water level information as well as a depth estiamate from a neural network. While fitting the data this way worked for some scenes where the river was viewed from the side, for scenes where the river was viewed from above, the depth information was wrong and the fit failed. To fix this, we only used the fit to extrapolate to unseen points in the scene and used the raw mask values where they were recorded. 
 
 #### Cross River Masks
-While ideally our method seperates the different banks of the river, often the mask of the water would not terminate at the edges of the image. As a result, the edges would be fully connected, including points that are in the middle of the river. We attempted to mitigate this by weighting these pixels by depth; however, this did not full fix the issue. As a result, many estiamtes were skewed lower since the middle river pixels correspond to low water levels. 
+While ideally our method seperates the different banks of the river, often the mask of the water would not terminate at the edges of the image. As a result, the edges would be fully connected, including points that were in the middle of the river. We attempted to mitigate this by weighting these pixels by depth; however, this did not full fix the issue. As a result, many estiamtes were skewed lower since the middle river pixels correspond to low water levels. 
 
 ### The Future
-- 3D Elevation Map Generation
-- Full Prediction based on Neural Network
-- Implement in the field
+In the future this method could be improved by:
+- 3D Elevation Map Generation - Rather than using historic data, 3D elevation maps of the site could be captured with LIDAR and matched to the camera images. 
+- Full Prediction based on Neural Network - With the proper setup, a model could be trained to predict the water level directly from the images and elevation maps.
+- Implement in the field - This method could be applied to future sites and remove the need for water level gauges.

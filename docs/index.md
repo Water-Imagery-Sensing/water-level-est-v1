@@ -208,12 +208,12 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 
-# Discussion
+## Discussion
 
-## Strengths
+### Strengths
 Even though our method is not perfect, it apperears to work fairly well producing estimates that properly follow the water level trends. It seems promising that our method could have some real value in the field.
 
-## Challenges - Real World Data is Difficult
+### Challenges - Real World Data is Difficult
 Throughout this project we have encountered many challenges, mostly stemming from the fact that real world data is messy and difficult to work with.
 
 #### Mask Issues 
@@ -223,6 +223,21 @@ Our method relies heavily upon the quality of the water masks fed into it. We us
 3. Darkness - Despite being equiped with IR cameras, the cameras often had worse quality night images. The drastic change in the scene from day to night also made the model fail to mask the water surface. 
 4. Poor Weather - Rain streaks on the camera lens and blur caused by drops often made images completely unusable or created large gaps in the masks.
 5. Grass and Plants - Plants at the edges of the rivers, made it diffucult to see the shore line and made it difficult to properly mask the water.
+
+<div style="display: grid; grid-template-columns: repeat(1, 3fr); gap: 1rem; text-align: center; margin: 1rem 0;">
+  <div>
+    <img src="assets/reflection_and_shadow.png" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Example of Shadows and Reflections that are Difficult to Mask</p>
+  </div>
+  <div>
+    <img src="assets/dark_and_raining.png" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Example Darkness and Rain Ruining the Mask</p>
+  </div>
+  <div>
+    <img src="assets/plants.png" style="width:100%; height:140px; object-fit:cover; border-radius:4px;">
+    <p style="font-size:0.8em; margin:0.3rem 0 0;">Example of Plants Ruining the Mask</p>
+  </div>
+</div>
 
 These issues in the masks ultiamtely resulted in errors in our elevation maps and in the water level estimation. By using even better segmentation tools, we might be able to get better results. 
 
@@ -238,5 +253,5 @@ In the future this method could be improved by:
 - Full Prediction based on Neural Network - With the proper setup, a model could be trained to predict the water level directly from the images and elevation maps.
 - Implement in the field - This method could be applied to future sites and remove the need for water level gauges.
 
-# Code Repo
+## Code Repo
 The code for this project can be found on our [GitHub](https://github.com/Water-Imagery-Sensing/water-level-est-v1).

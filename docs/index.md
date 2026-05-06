@@ -132,7 +132,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 |8| WI_Silver_Creek_at_State_Highway_21_near_Angelo               | Seen | 0.243       |
 
 <p align="center">
-    <b>1. WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet</b>: Example Image, Elevation Map, and Relative Depth Map <br>
+    <b>1. WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet</b>: <br>Example Image, Elevation Map, and Relative Depth Map <br>
     <img src="assets/WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet/Image.jpg" width="30%" />
     <img src="assets/WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet/elevation_map_with_background.png" width="30%" />  
     <img src="assets/WI_East_Branch_Pecatonica_River_near_Blanchardville_Bullet/relative_depth.png" width="30%" />   <br>
@@ -144,7 +144,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>2. CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton</b>: Example Image, Elevation Map, and Relative Depth Map <br>
+    <b>2. CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton</b>: <br>Example Image, Elevation Map, and Relative Depth Map <br>
     <img src="assets/CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton/Image.jpg" width="30%" />
     <img src="assets/CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton/elevation_map_with_background.png" width="30%" />  
     <img src="assets/CA_Arroyo_DE_LA_Laguna_A_Corte_Madrid_nr_Pleasanton/relative_depth.png" width="30%" />   <br>
@@ -156,7 +156,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>3. OK_Illinois_River_near_Moodys</b>: Example Image, Elevation Map, and Relative Depth Map <br>
+    <b>3. OK_Illinois_River_near_Moodys</b>: <br>Example Image, Elevation Map, and Relative Depth Map <br>
     <img src="assets/OK_Illinois_River_near_Moodys/Image.jpg" width="30%" />
     <img src="assets/OK_Illinois_River_near_Moodys/elevation_map_with_background.png" width="30%" />  
     <img src="assets/OK_Illinois_River_near_Moodys/relative_depth.png" width="30%" />   <br>
@@ -168,7 +168,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>4. OR_Breitenbush_River_above_French_Creek_near_Detroit</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
+    <b>4. OR_Breitenbush_River_above_French_Creek_near_Detroit</b>: <br>Example Image, Elevation Map, and Predictions (Seen) <br>
     <img src="assets/OR_Breitenbush_River_above_French_Creek_near_Detroit/Image.jpg" width="30%" />
     <img src="assets/OR_Breitenbush_River_above_French_Creek_near_Detroit/elevation_map_with_background.png" width="30%" />   
     <img src="assets/OR_Breitenbush_River_above_French_Creek_near_Detroit/Water Level Predicitons Using weighted median.png" width="30%" />   
@@ -176,7 +176,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>5. SC_Waccamaw_River_at_SC_22_below_Longs</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
+    <b>5. SC_Waccamaw_River_at_SC_22_below_Longs</b>: <br>Example Image, Elevation Map, and Predictions (Seen) <br>
     <img src="assets/SC_Waccamaw_River_at_SC_22_below_Longs/Image.jpg" width="30%" />
     <img src="assets/SC_Waccamaw_River_at_SC_22_below_Longs/elevation_map_with_background.png" width="30%" />   
     <img src="assets/SC_Waccamaw_River_at_SC_22_below_Longs/Water Level Predicitons Using weighted median.png" width="30%" />    
@@ -184,7 +184,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>6. VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
+    <b>6. VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX</b>: <br>Example Image, Elevation Map, and Predictions (Seen) <br>
     <img src="assets/VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX/Image.jpg" width="30%" />
     <img src="assets/VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX/elevation_map_with_background.png" width="30%" />   
     <img src="assets/VA_DIFFICULT_RUN_ABOVE_FOX_LAKE_NEAR_FAIRFAX/Water Level Predicitons Using weighted median - No Fit.png" width="30%" />    
@@ -192,7 +192,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>7. WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
+    <b>7. WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV</b>: <br>Example Image, Elevation Map, and Predictions (Seen) <br>
     <img src="assets/WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV/Image.jpg" width="30%" />
     <img src="assets/WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV/elevation_map_with_background.png" width="30%" />   
     <img src="assets/WI_Black_Earth_Creek_nr_Brewery_Rd_at_Cross_Plains_PIV/Water Level Predicitons Using weighted median.png" width="30%" />  
@@ -200,7 +200,7 @@ We tested our algorithm on a total of 8 different sites, each with a variety of 
 </p>
 <br>
 <p align="center">
-    <b>8. WI_Silver_Creek_at_State_Highway_21_near_Angelo</b>: Example Image, Elevation Map, and Predictions (Seen) <br>
+    <b>8. WI_Silver_Creek_at_State_Highway_21_near_Angelo</b>: <br>Example Image, Elevation Map, and Predictions (Seen) <br>
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/Image.jpg" width="30%" />
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/elevation_map_with_background.png" width="30%" />   
     <img src="assets/WI_Silver_Creek_at_State_Highway_21_near_Angelo/Water Level Predicitons Using weighted median.png" width="30%" />    
